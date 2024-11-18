@@ -43,6 +43,7 @@ jobs:
         working-directory: patientcare
         run:  mvn -B test -X --file pom.xml
       - name: Build and analyze
+        working-directory: patientcare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
