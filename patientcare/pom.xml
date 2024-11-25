@@ -24,6 +24,7 @@
 		<java.version>23</java.version>
 		<sonar.organization>mse-ws24</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.projectKey>MSE-WS24_moderne-software-entwicklung-projekt</sonar.projectKey>
 		<start-class>com.medieninformatik.patientcare.PatientcareApplication</start-class>
 	</properties>
 
@@ -127,6 +128,7 @@
 							<goal>check</goal>
 						</goals>
 						<configuration>
+
 							<rules>
 								<rule>
 									<element>CLASS</element>
@@ -156,21 +158,9 @@
 							</rules>
 
 						</configuration>
+
 					</execution>
 				</executions>
-				<configuration>
-					<formats>
-						<format>XML</format>
-					</formats>
-					<fileSets>
-						<fileSet>
-							<directory>${project.build.directory}</directory>
-							<includes>
-								<include>*.xml</include>
-							</includes>
-						</fileSet>
-					</fileSets>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -183,4 +173,37 @@
 			</plugin>
 		</plugins>
 	</build>
+<profiles>
+	<profile>
+		<id>coverage</id>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.8.12</version>
+					<executions>
+						<execution>
+							<id>prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>report</id>
+							<goals>
+								<goal>report</goal>
+							</goals>
+							<configuration>
+								<formats>
+									<format>XML</format>
+								</formats>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</build>
+	</profile>
+</profiles>
 </project>
