@@ -154,15 +154,19 @@
 									</limits>
 								</rule>
 							</rules>
+
 						</configuration>
 					</execution>
 				</executions>
 				<configuration>
+					<formats>
+						<format>XML</format>
+					</formats>
 					<fileSets>
 						<fileSet>
 							<directory>${project.build.directory}</directory>
 							<includes>
-								<include>*.exec</include>
+								<include>*.xml</include>
 							</includes>
 						</fileSet>
 					</fileSets>
