@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$/patientcare" dumb="true">
+      <sourceFolder url="file://$MODULE_DIR$/patientcare/src/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/patientcare/src/test" isTestSource="true" />
+    </content>
+  </component>
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping />
+        <naming-strategy-map />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/patientcare/src/main/com/medieninformatik/patientcare/PatientcareApplication.java</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+</module>
