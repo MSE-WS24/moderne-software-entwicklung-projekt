@@ -49,7 +49,7 @@ const bookAppointment = () => {
       {{ dummyDoctor.title }} {{ dummyDoctor.firstName }}
       {{ dummyDoctor.lastName }}
     </h1>
-    <img class="doctor-img" src="@/assets/images/dummy-doctor.png" />
+    <img class="doctor-img" src="@/assets/images/dummy-doctor.png" alt="an AI generated doctor"/>
     <p>{{ dummyDoctor.speciality }}</p>
     <p>{{ dummyDoctor.medicalId }}</p>
     <p>{{ dummyDoctor.street }} {{ dummyDoctor.houseNumber }}</p>
