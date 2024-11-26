@@ -30,18 +30,13 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: JaCoCo Code Coverage Report
-        id: jacoco_reporter
-        uses: PavanMudigonda/jacoco-reporter@v5.0
+      - name: Publish test coverage results
+        uses: PavanMudigonda/jacoco-reporter@v4.8
         with:
-         coverage_results_path: patientcare/target/site/jacoco/jacoco.xml
-         coverage_report_name: Coverage
-         coverage_report_title: JaCoCo
-         github_token: ${{ secrets.GH_Token }}
-         skip_check_run: false
-         minimum_coverage: 80
-         fail_below_threshold: false
-         publish_only_summary: false
+          coverage_results_path: 'target/site/jacoco/jacoco.xml'
+          coverage_report_title: 'Test coverage results'
+          coverage_report_name: 'Test coverage results'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and analyze
         working-directory: patientcare
         env:
